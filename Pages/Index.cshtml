@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome @Model.Name </h1>
+    <form methot="post">
+        <dif class="form-row">
+            <dif class="form-group col-md">
+                <label for="Street">Ulica:</label><br />
+                <input name="Street" />
+            </dif>
+            <dif class="form-group col-md">
+                <label for="Number">Number:</label><br />
+                <input type="number" name="number" />
+            </dif>
+            <dif class="form-group col-md">
+                <label for="ZipCode">Kod Pocztowy</label><br />
+                <input name="ZipCode" />
+            </dif>
+            <dif class="form-group col-md">
+                <label for="City">Miasto:</label><br/>
+                <input name="City" />
+            </dif>
+         </dif>
+                    <button type="submit" class="btn btn-primary">Akcuptuj</button>
+</form>
+</div>
