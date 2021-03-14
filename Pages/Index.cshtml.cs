@@ -12,8 +12,10 @@ namespace web_yep.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        [BindProperty]
         public Address Address { get; set; }
 
+        [BindProperty(SupportsGet = true)]
         public string Name { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -27,6 +29,14 @@ namespace web_yep.Pages
             {
                 Name = "User";
             }
+        }
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            return RedirectToPage("./Privacy");
         }
     }
 }
